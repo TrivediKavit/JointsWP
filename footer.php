@@ -10,18 +10,19 @@
 					
 				<footer class="footer" role="contentinfo">
 					
-					<div class="inner-footer grid-x grid-margin-x grid-padding-x">
-						
-						<div class="small-12 medium-12 large-12 cell">
-							<nav role="navigation">
-	    						<?php joints_footer_links(); ?>
-	    					</nav>
+					<div id="inner-footer">
+						<div class="row">
+							<div class="columns large-12">
+								<nav role="navigation">
+									<?php joints_footer_links(); ?>
+								</nav>
+							</div>
 	    				</div>
-						
-						<div class="small-12 medium-12 large-12 cell">
-							<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+						<div class="row">
+							<div class="columns large-12">
+								<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+							</div>
 						</div>
-					
 					</div> <!-- end #inner-footer -->
 				
 				</footer> <!-- end .footer -->

@@ -15,6 +15,8 @@ const LOCAL_URL = 'http://jointswp-github.dev/';
 
 // Set path to Foundation files
 const FOUNDATION = 'node_modules/foundation-sites';
+const FONT_AWESOME = 'node_modules/@fortawesome/fontawesome-free';
+const INTL_TEL_INPUT = 'node_modules/intl-tel-input';
 
 // Select Foundation components, remove components project will not use
 const SOURCE = {
@@ -37,7 +39,6 @@ const SOURCE = {
 		FOUNDATION + '/dist/js/plugins/foundation.interchange.js',
 		FOUNDATION + '/dist/js/plugins/foundation.offcanvas.js',
 		FOUNDATION + '/dist/js/plugins/foundation.orbit.js',
-		FOUNDATION + '/dist/js/plugins/foundation.responsiveAccordionTabs.js',
 		FOUNDATION + '/dist/js/plugins/foundation.responsiveMenu.js',
 		FOUNDATION + '/dist/js/plugins/foundation.responsiveToggle.js',
 		FOUNDATION + '/dist/js/plugins/foundation.reveal.js',
@@ -46,8 +47,18 @@ const SOURCE = {
 		FOUNDATION + '/dist/js/plugins/foundation.magellan.js',
 		FOUNDATION + '/dist/js/plugins/foundation.sticky.js',
 		FOUNDATION + '/dist/js/plugins/foundation.tabs.js',
+		FOUNDATION + '/dist/js/plugins/foundation.responsiveAccordionTabs.js',
 		FOUNDATION + '/dist/js/plugins/foundation.toggler.js',
 		FOUNDATION + '/dist/js/plugins/foundation.tooltip.js',
+
+		// FOUNDATION DATEPICKER
+		'node_modules/foundation-datepicker/js/foundation-datepicker.min.js',
+
+		// OWL CAROUSEL JS
+		'node_modules/owl.carousel/dist/owl.carousel.js',
+
+		// INTL-TEL-INPUT JS
+		INTL_TEL_INPUT + '/build/js/intlTelInput.min.js',
 
 		// Place custom JS here, files will be concantonated, minified if ran with --production
 		'assets/scripts/js/**/*.js',
@@ -164,6 +175,37 @@ gulp.task('browsersync', function() {
 
 });
 
+// COPY FONT-AWESOME FONTS
+gulp.task('fontawesomecopy', function() {
+	var fontAwesomeSource = [ FONT_AWESOME + '/webfonts/*' ];
+	var fontAwesomeDestination = 'assets/fonts';
+
+	return gulp
+			.src(fontAwesomeSource)
+			.pipe(gulp.dest(fontAwesomeDestination));
+});
+
+// COPY INTL-TEL-INPUT FLAGS
+gulp.task('intlTelInputImageCopy', function() {
+	var intlTelInputImageSource = [ INTL_TEL_INPUT + '/build/img/*' ];
+	var intlTelInputImageDestination = 'assets/images/intl-tel-input';
+
+	return	gulp
+			.src(intlTelInputImageSource)
+			.pipe(gulp.dest(intlTelInputImageDestination));
+});
+
+// COPY INTL-TEL-INPUT UTIL
+gulp.task('intlTelInputUtilCopy', function() {
+
+	var intlTelInputUtilSource = [ INTL_TEL_INPUT + '/build/js/utils.js' ];
+	var intlTelInputUtilDestination = 'assets/scripts/';
+
+	return  gulp
+			.src(intlTelInputUtilSource)
+			.pipe(gulp.dest(intlTelInputUtilDestination));
+});
+
 // Watch files for changes (without Browser-Sync)
 gulp.task('watch', function() {
 
@@ -179,4 +221,4 @@ gulp.task('watch', function() {
 });
 
 // Run styles, scripts and foundation-js
-gulp.task('default', gulp.parallel('styles', 'scripts', 'images'));
+gulp.task('default', gulp.parallel('styles', 'scripts', 'images', 'fontawesomecopy', 'intlTelInputImageCopy', 'intlTelInputUtilCopy'));

@@ -9,9 +9,9 @@ get_header(); ?>
 			
 	<div class="content">
 
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
+		<div class="inner-content row">
 	
-			<main class="main small-12 medium-8 large-8 cell" role="main">
+			<main class="main columns large-12" role="main">
 
 				<article class="content-not-found">
 				
@@ -22,10 +22,12 @@ get_header(); ?>
 					<section class="entry-content">
 						<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'jointswp' ); ?></p>
 					</section> <!-- end article section -->
-
+					
+					<?php /*
 					<section class="search">
 					    <p><?php get_search_form(); ?></p>
 					</section> <!-- end search section -->
+					*/ ?>
 			
 				</article> <!-- end article -->
 	

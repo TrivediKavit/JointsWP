@@ -10,7 +10,7 @@
 		<h1 class="page-title"><?php the_title(); ?></h1>
 	</header> <!-- end article header -->
 					
-    <section class="entry-content" itemprop="articleBody">
+    <section class="entry-content" itemprop="text">
 	    <?php the_content(); ?>
 	</section> <!-- end article section -->
 						
@@ -18,6 +18,6 @@
 		 <?php wp_link_pages(); ?>
 	</footer> <!-- end article footer -->
 						    
-	<?php comments_template(); ?>
+	<?php /* comments_template(); */ ?>
 					
 </article> <!-- end article -->

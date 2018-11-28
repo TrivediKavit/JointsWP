@@ -21,7 +21,7 @@ get_header(); ?>
 			    					
 			</main> <!-- end #main -->
 
-		    <?php get_sidebar(); ?>
+		    <?php /* get_sidebar(); */ ?>
 		    
 		</div> <!-- end #inner-content -->
 

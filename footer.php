@@ -11,6 +11,7 @@
 				<footer class="footer" role="contentinfo">
 					
 					<div id="inner-footer">
+
 						<div class="row">
 							<div class="columns large-12">
 								<nav role="navigation">
@@ -18,11 +19,13 @@
 								</nav>
 							</div>
 	    				</div>
-						<div class="row">
+
+	    				<div class="row">
 							<div class="columns large-12">
 								<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
 							</div>
 						</div>
+					
 					</div> <!-- end #inner-footer -->
 				
 				</footer> <!-- end .footer -->

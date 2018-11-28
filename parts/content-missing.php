@@ -17,14 +17,15 @@
 		</section>
 		
 		<?php /*
-		<section class="search">
+		<!--<section class="search">
 		    <p><?php get_search_form(); ?></p>
-		</section> <!-- end search section -->
-		*/ ?>
+		</section>-->
+		<!-- end search section -->
 		
-		<footer class="article-footer">
+		<!--<footer class="article-footer">
 			<p><?php _e( 'This is the error message in the parts/content-missing.php template.', 'jointswp' ); ?></p>
-		</footer>
+		</footer>-->
+		*/ ?>
 		
 	<?php else: ?>
 	
@@ -37,14 +38,15 @@
 		</section>
 		
 		<?php /*
-		<section class="search">
+		<!--<section class="search">
 		    <p><?php get_search_form(); ?></p>
-		</section> <!-- end search section -->
-		*/ ?>
+		</section>-->
+		<!-- end search section -->
 		
-		<footer class="article-footer">
-		  <p><?php _e( 'This is the error message in the parts/content-missing.php template.', 'jointswp' ); ?></p>
-		</footer>
+		<!--<footer class="article-footer">
+			<p><?php _e( 'This is the error message in the parts/content-missing.php template.', 'jointswp' ); ?></p>
+		</footer>-->
+		*/ ?>
 			
 	<?php endif; ?>
 	

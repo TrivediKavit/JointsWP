@@ -1,0 +1,217 @@
+/************************************************
+
+Stylesheet: Custom Stylesheet
+
+*************************************************/
+
+/*********************
+BRAND STYLE VARIABLES - START
+*********************/
+$brand-primary: $primary-color;
+$brand-secondary: $secondary-color;
+$brand-body-color: $body-font-color;
+$brand-header-color: $header-color;
+$brand-white: $white;
+/*********************
+BRAND STYLE VARIABLES - END
+*********************/
+
+/*********************
+IMPORT FONTAWESOME - START
+*********************/
+$fa-font-path: "../fonts/font-awesome";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "./node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+/*********************
+IMPORT FONTAWESOME - END
+*********************/
+
+/*********************
+IMPORT FOUNDATION DATEPICKER - START
+*********************/
+@import "./node_modules/foundation-datepicker/scss/foundation-datepicker.scss";
+
+.datepicker
+{
+	td
+	{
+		&.active.day, 
+		&.active.year,
+		span.active
+		{
+			background: $brand-primary;
+			color: $brand-white;
+		}
+
+		&.day:not(.disabled):hover, 
+		&.year:not(.disabled):hover,
+		span:not(.disabled):hover
+		{
+			background-color: $brand-secondary;
+			color: $brand-white;
+		}
+	}
+}
+
+.codesm-datepicker-field
+{
+	cursor: pointer!important;
+}
+/*********************
+IMPORT FOUNDATION DATEPICKER - END
+*********************/
+
+/*********************
+IMPORT INTL-TEL-INPUT - START
+*********************/
+$flagsImagePath: "../images/intl-tel-input/";
+@import './node_modules/intl-tel-input/src/css/intlTelInput.scss';
+
+.intl-tel-input
+{
+	display: block;
+	margin-bottom: rem-calc(16)!important;
+
+	.flag-container
+	{
+		left: rem-calc(2);
+		top: rem-calc(1);
+		bottom: rem-calc(1);
+		padding: 0 0 0 rem-calc(1);
+		outline: none;
+
+		.selected-flag
+		{
+			background-color: #eeeeee;
+			border-right: rem-calc(1) solid #e0e0e0;
+			outline: none;
+		}
+	}
+}
+/*********************
+IMPORT INTL-TEL-INPUT - END
+*********************/
+
+/*********************
+IMPORT OWL CAROUSEL - START
+*********************/
+@import './node_modules/owl.carousel/src/scss/owl.carousel.scss';
+@import './node_modules/owl.carousel/src/scss/owl.theme.default.scss';
+
+.owl-carousel
+{
+	.owl-item
+	{
+		img
+		{
+			display: inline-block;
+			width: auto!important;
+		}
+	}
+}
+
+.owl-theme
+{
+	.owl-dots 
+	{
+		.owl-dot
+		{
+			span
+			{
+				height: rem-calc(10);
+				width: rem-calc(10);
+				background-color: $brand-secondary;
+				border: none;
+				border-radius: rem-calc(10);
+				margin: rem-calc(3);
+				margin-top: rem-calc(10);
+				transition: 0.3s all;
+			}
+
+			&.active,
+			&:hover
+			{
+				span
+				{
+					background-color: $brand-primary;
+				}
+			}
+		}
+	}
+}
+/*********************
+IMPORT OWL CAROUSEL - END
+*********************/
+
+/*********************
+GENERAL STYLES - START
+*********************/
+//@import 'includes/general';
+/*********************
+GENERAL STYLES - END
+*********************/
+
+/*********************
+CONTENT STYLES - START
+*********************/
+//@import 'includes/content';
+/*********************
+CONTENT STYLES - END
+*********************/
+
+/*********************
+FORM STYLES - START
+*********************/
+//@import 'includes/form';
+/*********************
+FORM STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+THEME HEADER STYLES - START
+*********************/
+//@import 'includes/theme_header';
+/*********************
+THEME HEADER STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+HOMEPAGE STYLES - START
+*********************/
+/*********************
+HOMEPAGE STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+THEME FOOTER STYLES - START
+*********************/
+//@import 'includes/theme_footer';
+/*********************
+THEME FOOTER STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+RESPONSIVE STYLES - START
+*********************/
+//@import 'includes/responsive';
+/*********************
+RESPONSIVE STYLES - END
+*********************/
+
+/*********************
+STRIPE STICKY MENU STYLES - START
+*********************/
+//@import 'includes/stripe_sticky_menu';
+/*********************
+STRIPE STICKY MENU STYLES - END
+*********************/

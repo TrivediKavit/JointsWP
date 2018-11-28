@@ -24,9 +24,10 @@ get_header(); ?>
 					</section> <!-- end article section -->
 					
 					<?php /*
-					<section class="search">
+					<!--<section class="search">
 					    <p><?php get_search_form(); ?></p>
-					</section> <!-- end search section -->
+					</section> -->
+					<!-- end search section -->
 					*/ ?>
 			
 				</article> <!-- end article -->

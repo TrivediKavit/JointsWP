@@ -4,6 +4,7 @@ var gulp  = require('gulp'),
     gutil = require('gulp-util'),
     browserSync = require('browser-sync').create(),
     filter = require('gulp-filter'),
+    touch = require('gulp-touch-cmd'),
     plugin = require('gulp-load-plugins')();
 
 
@@ -15,8 +16,10 @@ const LOCAL_URL = 'http://jointswp-github.dev/';
 
 // Set path to Foundation files
 const FOUNDATION = 'node_modules/foundation-sites';
+const FOUNDATION_DATEPICKER = 'node_modules/foundation-datepicker';
 const FONT_AWESOME = 'node_modules/@fortawesome/fontawesome-free';
 const INTL_TEL_INPUT = 'node_modules/intl-tel-input';
+const OWL_CAROUSEL = 'node_modules/owl.carousel';
 
 // Select Foundation components, remove components project will not use
 const SOURCE = {
@@ -35,7 +38,6 @@ const SOURCE = {
 		FOUNDATION + '/dist/js/plugins/foundation.drilldown.js',
 		FOUNDATION + '/dist/js/plugins/foundation.dropdown.js',
 		FOUNDATION + '/dist/js/plugins/foundation.dropdownMenu.js',
-		FOUNDATION + '/dist/js/plugins/foundation.equalizer.js',
 		FOUNDATION + '/dist/js/plugins/foundation.interchange.js',
 		FOUNDATION + '/dist/js/plugins/foundation.offcanvas.js',
 		FOUNDATION + '/dist/js/plugins/foundation.orbit.js',
@@ -47,15 +49,17 @@ const SOURCE = {
 		FOUNDATION + '/dist/js/plugins/foundation.magellan.js',
 		FOUNDATION + '/dist/js/plugins/foundation.sticky.js',
 		FOUNDATION + '/dist/js/plugins/foundation.tabs.js',
-		FOUNDATION + '/dist/js/plugins/foundation.responsiveAccordionTabs.js',
 		FOUNDATION + '/dist/js/plugins/foundation.toggler.js',
 		FOUNDATION + '/dist/js/plugins/foundation.tooltip.js',
 
+		FOUNDATION + '/dist/js/plugins/foundation.equalizer.js',
+		FOUNDATION + '/dist/js/plugins/foundation.responsiveAccordionTabs.js',
+
 		// FOUNDATION DATEPICKER
-		'node_modules/foundation-datepicker/js/foundation-datepicker.min.js',
+		FOUNDATION_DATEPICKER + '/js/foundation-datepicker.min.js',
 
 		// OWL CAROUSEL JS
-		'node_modules/owl.carousel/dist/owl.carousel.js',
+		OWL_CAROUSEL + '/dist/owl.carousel.js',
 
 		// INTL-TEL-INPUT JS
 		INTL_TEL_INPUT + '/build/js/intlTelInput.min.js',
@@ -84,7 +88,10 @@ const JSHINT_CONFIG = {
 	"node": true,
 	"globals": {
 		"document": true,
-		"jQuery": true
+		"window": true,
+		"jQuery": true,
+		"$": true,
+		"Foundation": true
 	}
 };
 
@@ -133,9 +140,10 @@ gulp.task('styles', function() {
 		    ],
 		    cascade: false
 		}))
-		.pipe(plugin.cssnano())
+		.pipe(plugin.cssnano({safe: true, minifyFontValues: {removeQuotes: false}}))
 		.pipe(plugin.sourcemaps.write('.'))
 		.pipe(gulp.dest(ASSETS.styles))
+		.pipe(touch())
 		.pipe(browserSync.reload({
           stream: true
         }));
@@ -176,9 +184,9 @@ gulp.task('browsersync', function() {
 });
 
 // COPY FONT-AWESOME FONTS
-gulp.task('fontawesomecopy', function() {
+gulp.task('fontAwesomeCopy', function() {
 	var fontAwesomeSource = [ FONT_AWESOME + '/webfonts/*' ];
-	var fontAwesomeDestination = 'assets/fonts';
+	var fontAwesomeDestination = 'assets/fonts/font-awesome';
 
 	return gulp
 			.src(fontAwesomeSource)
@@ -221,4 +229,5 @@ gulp.task('watch', function() {
 });
 
 // Run styles, scripts and foundation-js
-gulp.task('default', gulp.parallel('styles', 'scripts', 'images', 'fontawesomecopy', 'intlTelInputImageCopy', 'intlTelInputUtilCopy'));
+gulp.task('default', gulp.parallel('styles', 'scripts', 'images', 'fontAwesomeCopy', 'intlTelInputImageCopy', 'intlTelInputUtilCopy'));
+gulp.task('production', gulp.parallel('styles', 'scripts'));

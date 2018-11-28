@@ -30,6 +30,8 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700|Roboto:300,400,700" rel="stylesheet">
+
 		<?php wp_head(); ?>
 
 	</head>
@@ -47,6 +49,6 @@
 							
 					 <!-- This navs will be applied to the topbar, above all content 
 						  To see additional nav styles, visit the /parts directory -->
-					 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
+					 <?php get_template_part( 'parts/nav', 'topbar' ); ?>
 	 	
 				</header> <!-- end .header -->

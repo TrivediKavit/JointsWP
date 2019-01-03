@@ -3,7 +3,7 @@ These functions make sure WordPress
 and Foundation play nice together.
 */
 
-var THEME_FOLDER = "../wp-content/themes/riopromo_v1";
+var THEME_FOLDER = "../wp-content/themes/codesmwp";
 var PHONE_FIELD = ".codesm-phone-field";
 var DATEPICKER_FIELD = ".codesm-datepicker-field";
 

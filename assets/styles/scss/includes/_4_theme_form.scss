@@ -1,0 +1,107 @@
+/** 
+ * Add label styles
+ */
+label
+{
+	font-size: rem-calc(16);
+	color: $brand-body-color;
+}
+
+/** 
+ * Add input styles
+ */
+input:not([type="submit"]),
+textarea,
+select
+{
+	height: auto;
+	padding: rem-calc(15);
+	color: $brand-body-color;
+	font-size: rem-calc(16);
+	line-height: rem-calc(24);
+	box-shadow: none;
+	outline: none;
+	font-weight: 400;
+	resize: none;
+	background-color: #ffffff;
+    border: rem-calc(1) solid $brand-primary;
+	margin: 0 0 rem-calc(16)!important;
+	transition: 0.3s all;
+}
+
+select
+{
+	padding-right: rem-calc(30);
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: %2300aaec;'></polygon></svg>");
+}
+
+input:not([type="submit"]):focus,
+textarea:focus,
+select:focus
+{
+    border: rem-calc(1) solid $brand-secondary;
+    border-image: none;
+	box-shadow: none;
+	outline: none;
+	background-color: #f1f1f1;
+	color: $brand-header-color;
+}
+
+input::placeholder, 
+textarea::placeholder
+{
+	color: $brand-body-color;
+	opacity: 1;
+}
+
+.wpcf7-list-item
+{
+    display: block!important;
+    margin-left: 0!important;
+
+    label
+    {
+        cursor: pointer;
+    }
+}
+
+.wpcf7 .row .row
+{
+	margin-left: -0.5rem!important;
+	margin-right: -0.5rem!important;
+}
+
+.wpcf7 .row .row .columns
+{
+	padding-left: 0.5rem!important;
+	padding-right: 0.5rem!important;
+}
+
+.wpcf7 button[type="submit"]
+{
+	margin-bottom: 0;
+}
+
+input.wpcf7-not-valid,
+select.wpcf7-not-valid,
+textarea.wpcf7-not-valid
+{
+	border: rem-calc(1) solid red!important;
+}
+
+.ajax-loader
+{
+	display: none;
+}
+
+span.wpcf7-not-valid-tip
+{
+	display: none;
+}
+
+div.wpcf7-response-output
+{
+	margin: 0;
+	margin-top: 1rem;
+	text-align: center;
+}

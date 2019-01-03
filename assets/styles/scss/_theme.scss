@@ -1,0 +1,106 @@
+/************************************************
+
+Stylesheet: Custom Stylesheet
+
+*************************************************/
+
+/*********************
+BRAND VARIABLES - START
+*********************/
+$brand-primary: $primary-color;
+$brand-secondary: $secondary-color;
+$brand-body-color: $body-font-color;
+$brand-header-color: $header-color;
+$brand-white: $white;
+/*********************
+BRAND VARIABLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+IMPORTS - START
+*********************/
+@import 'includes/1_theme_imports';
+/*********************
+IMPORTS - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+GENERAL STYLES - START
+*********************/
+@import 'includes/2_theme_general';
+/*********************
+GENERAL STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+CONTENT STYLES - START
+*********************/
+@import 'includes/3_theme_content';
+/*********************
+CONTENT STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+FORM STYLES - START
+*********************/
+@import 'includes/4_theme_form';
+/*********************
+FORM STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+THEME HEADER STYLES - START
+*********************/
+@import 'includes/5_theme_header';
+/*********************
+THEME HEADER STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+HOMEPAGE STYLES - START
+*********************/
+/*********************
+HOMEPAGE STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+THEME FOOTER STYLES - START
+*********************/
+@import 'includes/6_theme_footer';
+/*********************
+THEME FOOTER STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+RESPONSIVE STYLES - START
+*********************/
+@import 'includes/7_theme_responsive';
+/*********************
+RESPONSIVE STYLES - END
+*********************/
+
+/*==============================================*/
+
+/*********************
+STRIPE STICKY MENU STYLES - START
+*********************/
+@import 'includes/8_theme_stripe_sticky_menu';
+/*********************
+STRIPE STICKY MENU STYLES - END
+*********************/

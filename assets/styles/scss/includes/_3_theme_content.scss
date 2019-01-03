@@ -1,0 +1,141 @@
+/** 
+ * Add min-height to #content
+ */
+#content
+{
+	min-height: rem-calc(300);
+}
+
+
+/** 
+ * Remove margin-bottom from flex-video
+ */
+.flex-video
+{
+	margin-bottom: 0;
+}
+
+
+/** 
+ * Add scroll-to-top arrow style
+ */
+a#scroll-to-top
+{
+	background: url('../images/arrow.png') no-repeat center center;
+	background-size: cover;
+	z-index: 999;
+	width: rem-calc(35);
+	height: rem-calc(35);
+	position: fixed;
+	right: rem-calc(30);
+	bottom: rem-calc(30);
+	text-indent: -9999px;
+	font-size: 0;
+	cursor: pointer;
+	outline: 0;
+
+    /**
+    * Style for when viewport goes below {small} breakpoint
+    */
+    @include breakpoint(small down)
+    {
+		right: 0;
+    	bottom: 0;
+    }
+}
+
+
+/** 
+ * Adjust visual composer class styles and add padding classes
+ */
+.wpb_button, .wpb_content_element, ul.wpb_thumbnails-fluid>li
+{
+	margin-bottom: 0;
+}
+
+.vc_col-has-fill>.vc_column-inner, 
+.vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner, 
+.vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner, 
+.vc_row-has-fill+.vc_vc_row>.vc_row>.vc_vc_column>.vc_column_container>.vc_column-inner, 
+.vc_row-has-fill+.vc_vc_row_inner>.vc_row>.vc_vc_column_inner>.vc_column_container>.vc_column-inner, 
+.vc_row-has-fill>.vc_column_container>.vc_column-inner, 
+.vc_row-has-fill>.vc_row>.vc_vc_column>.vc_column_container>.vc_column-inner, 
+.vc_row-has-fill>.vc_vc_column_inner>.vc_column_container>.vc_column-inner, 
+.vc_section.vc_section-has-fill, 
+.vc_section.vc_section-has-fill+.vc_row-full-width+.vc_section, 
+.vc_section.vc_section-has-fill+.vc_section
+{
+	padding-top: 0;
+}
+
+.no-padding-foundation .columns
+{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.no-padding-vc .vc_column_container>.vc_column-inner
+{
+	padding-left: 0!important;
+	padding-right: 0!important;
+}
+
+
+/** 
+ * Add button styles
+ */
+.button,
+button.button
+{
+	
+}
+
+/** 
+ * Add list classes
+ */
+ul.social-icons
+{
+	list-style-type: none;
+	display: inline-block;
+	margin-left: 0;
+
+	li
+	{
+        float: none;
+        display: inline-block;
+
+		a
+		{
+			color: $brand-white;
+			background-color: transparent;
+			text-align: center;
+			line-height: 1;
+			padding: rem-calc(10) rem-calc(5) rem-calc(0);
+			min-height: rem-calc(40);
+			min-width: rem-calc(40);
+			border: rem-calc(2) solid $brand-white;
+			border-radius: 50%;
+			display: inline-block;
+			transition: 0.3s all;
+
+			i
+			{
+				font-size: rem-calc(18);
+				line-height: 1;
+				padding: rem-calc(0);
+			}
+
+			&:hover,
+			&:focus
+			{
+				color: $brand-primary;
+				background-color: $brand-white;
+			}
+		}
+
+		&:not(:last-child)
+		{
+			margin-right: rem-calc(12);
+		}
+	}
+}

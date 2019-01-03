@@ -1,0 +1,54 @@
+/** 
+ * Stripe Sticky Menu
+ */
+#bonfire-icon-menu
+{
+	.menu
+	{
+		border-bottom: rem-calc(1) solid #ffffff;
+
+		.active > a
+		{
+			background-color: transparent;
+		}
+
+		li
+		{ 	
+			vertical-align: middle;
+			a
+			{
+				line-height: rem-calc(24);
+			}
+
+			i
+			{
+				font-size: rem-calc(24);
+				padding-top: 0!important;
+			}
+
+			span
+			{
+			}
+
+			ul
+			{
+				margin: rem-calc(12) 0 0 rem-calc(-10000);
+
+				li
+				{
+					&:first-child
+					{
+						border-left: rem-calc(1) solid #ffffff;
+					}
+
+					&:last-child
+					{
+						border-left: rem-calc(1) solid #ffffff;
+						border-right: rem-calc(1) solid #ffffff;
+						border-bottom: rem-calc(1) solid #ffffff;
+					}
+				}
+			}
+		}
+	}
+}

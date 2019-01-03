@@ -1,0 +1,252 @@
+/** 
+ * Add styles for body
+ */
+body
+{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+/** 
+ * Add font sizes
+ */
+.extra-large
+{
+	font-size: rem-calc(24);
+}
+
+.extra-big
+{
+	font-size: rem-calc(21);
+}
+
+.big
+{
+	font-size: rem-calc(18);
+}
+
+.small
+{
+	font-size: rem-calc(14);
+	line-height: rem-calc(24);
+}
+
+.extra-small
+{
+	font-size: rem-calc(12);
+	line-height: rem-calc(21);
+}
+
+
+/** 
+ * Add float classes
+ */
+.float-left-for-large
+{
+	@include breakpoint(large)
+	{
+		float: left!important;
+	}
+}
+
+.float-right-for-large
+{
+	@include breakpoint(large)
+	{
+		float: right!important;
+	}
+}
+
+
+/** 
+ * Add margin classes
+ */
+.no-margin-bottom
+{
+	margin-bottom: 0;
+}
+
+.bottom-buffer-0point5rem
+{
+	margin-bottom: rem-calc(8);
+}
+
+.bottom-buffer-1rem
+{
+	margin-bottom: rem-calc(16);
+}
+
+.bottom-buffer-1point5rem
+{
+	margin-bottom: rem-calc(24);
+}
+
+.bottom-buffer-2rem
+{
+	margin-bottom: rem-calc(32);
+}
+
+.bottom-buffer-2point5rem
+{
+	margin-bottom: rem-calc(40);
+}
+
+
+/** 
+ * Add font weight classes
+ */
+.font-light
+{
+	font-weight: 300;
+}
+
+.font-normal
+{
+	font-weight: 400;
+}
+
+.font-bold
+{
+	font-weight: 700;
+}
+
+
+/** 
+ * Add background position and size classes
+ */
+.bg-center
+{
+	background-position: center center!important;
+}
+
+.bg-center-top
+{
+	background-position: center top!important;
+}
+
+.bg-center-bottom
+{
+	background-position: center bottom!important;
+}
+
+.bg-size-cover
+{
+	background-size: cover!important;
+}
+
+.bg-no-repeat
+{
+	background-repeat: no-repeat;
+}
+
+.bg-repeat-x
+{
+	background-repeat: repeat-x;
+}
+
+.bg-attachment-fixed
+{
+	/**
+	* Style for when viewport goes above {large} breakpoint
+	*/
+	@include breakpoint(large)
+	{
+		background-attachment: fixed;
+	}
+}
+
+
+/** 
+ * Add text and background color classes
+ */
+.alt-primary
+{
+	color: $brand-primary;
+}
+
+.alt-secondary
+{
+	color: $brand-secondary;
+}
+
+.alt-white
+{
+	color: $brand-white;
+}
+
+.alt-black
+{
+	color: $black;
+}
+
+.alt-header-color
+{
+	color: $brand-header-color;
+}
+
+.bg-primary
+{
+	background-color: $brand-primary;
+}
+
+.bg-secondary
+{
+	background-color: $brand-secondary;
+}
+
+.bg-white
+{
+	background-color: $brand-white;
+}
+
+.bg-primary-for-mobile
+{
+	/**
+	* Style for when viewport goes below {large} breakpoint
+	*/
+	@include breakpoint(large down)
+	{
+		background-color: $brand-primary;
+	}
+}
+
+.bg-secondary-for-mobile
+{
+	/**
+	* Style for when viewport goes below {large} breakpoint
+	*/
+	@include breakpoint(large down)
+	{
+		background-color: $brand-secondary;
+	}
+}
+
+
+/** 
+ * Add text-transform and text-decoration classes
+ */
+.uc
+{
+	text-transform: uppercase;
+}
+
+.underlined
+{
+	text-decoration: underline;
+}
+
+
+/** 
+ * Add inline classes
+ */
+.show-inline
+{
+	display: inline-block;
+	vertical-align: middle;
+
+	+ .show-inline
+	{
+		margin-left: rem-calc(16);
+	}
+}

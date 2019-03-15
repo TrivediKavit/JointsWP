@@ -40,8 +40,8 @@ function addEvent(ele, event, func)
 function link(event)
 {
 	var target	= event.target;
-	var url	= target.getAttribute('data-href');
-	var newWindow = (target.getAttribute('data-newwindow') !== null) ? true : false;
+	var url	= this.getAttribute('data-href');
+	var newWindow = (this.getAttribute('data-newwindow') !== null) ? true : false;
 
 	if (!target.href)
 	{
@@ -120,6 +120,16 @@ function initThemeFunctions()
 	initTelephoneInput(PHONE_FIELD);
 
 	// FOUNDATION DATEPICKER
-	jQuery(DATEPICKER_FIELD).attr("readonly", "readonly");
+	jQuery(DATEPICKER_FIELD).each(function(){
+		if(!jQuery(this).hasClass('allow-user-fillable'))
+		{
+			jQuery(this).attr("readonly", "readonly");
+		}
+	});
 	jQuery(DATEPICKER_FIELD).fdatepicker();
+
+	// ENABLE PSEUDO ELEMENTS FOR FONT AWESOME
+	window.FontAwesomeConfig = {
+		searchPseudoElements: true
+	};
 }

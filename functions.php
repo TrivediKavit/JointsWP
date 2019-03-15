@@ -77,7 +77,10 @@ function custom_css_classes_for_vc_column( $class_string, $tag )
 {
 	if ( $tag == 'vc_column_container' || $tag == 'vc_column_inner' )
 	{
-		$class_string = preg_replace( '/vc_col-sm-(\d{1,2})/', 'large-$1 columns', $class_string ); // This will replace "vc_col-sm-%" with "large-%"
+		if(!preg_match('/columns/', $class_string))
+		{
+			$class_string = preg_replace( '/vc_col-sm-(\d{1,2})/', 'large-$1 columns', $class_string ); // This will replace "vc_col-sm-%" with "large-%"	
+		}
 	}
 	
 	/*if ( $tag == 'vc_column' || $tag == 'vc_column_inner' )

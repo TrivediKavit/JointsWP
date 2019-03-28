@@ -12,7 +12,7 @@ var gulp  = require('gulp'),
 // Modify these variables to match your project needs
 
 // Set local URL if using Browser-Sync
-const LOCAL_URL = 'http://jointswp-github.dev/';
+const LOCAL_URL = 'http://jointswp.local/';
 
 // Set path to Foundation files
 const FOUNDATION = 'node_modules/foundation-sites';
@@ -121,6 +121,7 @@ gulp.task('scripts', function() {
 		.pipe(plugin.uglify())
 		.pipe(plugin.sourcemaps.write('.')) // Creates sourcemap for minified JS
 		.pipe(gulp.dest(ASSETS.scripts))
+		.pipe(touch());
 });
 
 // Compile Sass, Autoprefix and minify
@@ -143,10 +144,7 @@ gulp.task('styles', function() {
 		.pipe(plugin.cssnano({safe: true, minifyFontValues: {removeQuotes: false}}))
 		.pipe(plugin.sourcemaps.write('.'))
 		.pipe(gulp.dest(ASSETS.styles))
-		.pipe(touch())
-		.pipe(browserSync.reload({
-          stream: true
-        }));
+		.pipe(touch());
 });
 
 // Optimize images, move into assets directory
@@ -154,6 +152,7 @@ gulp.task('images', function() {
 	return gulp.src(SOURCE.images)
 		.pipe(plugin.imagemin())
 		.pipe(gulp.dest(ASSETS.images))
+		.pipe(touch());
 });
 
  gulp.task( 'translate', function () {
@@ -177,9 +176,9 @@ gulp.task('browsersync', function() {
 	    proxy: LOCAL_URL,
     });
 
-    gulp.watch(SOURCE.styles, gulp.parallel('styles'));
+    gulp.watch(SOURCE.styles, gulp.parallel('styles')).on('change', browserSync.reload);
     gulp.watch(SOURCE.scripts, gulp.parallel('scripts')).on('change', browserSync.reload);
-    gulp.watch(SOURCE.images, gulp.parallel('images'));
+    gulp.watch(SOURCE.images, gulp.parallel('images')).on('change', browserSync.reload);
 
 });
 

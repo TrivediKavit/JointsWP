@@ -1,7 +1,10 @@
 <?php
 function site_scripts() {
   global $wp_styles; // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
-        
+  
+    // International Telephone Input Utility Script
+    wp_enqueue_script( 'intl-tel-input-utility-js', get_template_directory_uri() . '/assets/scripts/intl-tel-input-utility.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts/js'), true );
+    
     // Adding scripts file in the footer
     wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts/js'), true );
    

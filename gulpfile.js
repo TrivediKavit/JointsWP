@@ -4,7 +4,8 @@ var gulp  = require('gulp'),
     gutil = require('gulp-util'),
     browserSync = require('browser-sync').create(),
     filter = require('gulp-filter'),
-    touch = require('gulp-touch-cmd'),
+	touch = require('gulp-touch-cmd'),
+	rename = require('gulp-rename'),
     plugin = require('gulp-load-plugins')();
 
 
@@ -62,7 +63,7 @@ const SOURCE = {
 		OWL_CAROUSEL + '/dist/owl.carousel.js',
 
 		// INTL-TEL-INPUT JS
-		INTL_TEL_INPUT + '/build/js/intlTelInput.min.js',
+		INTL_TEL_INPUT + '/build/js/intlTelInput.js',
 
 		// Place custom JS here, files will be concantonated, minified if ran with --production
 		'assets/scripts/js/**/*.js',
@@ -210,6 +211,7 @@ gulp.task('intlTelInputUtilCopy', function() {
 
 	return  gulp
 			.src(intlTelInputUtilSource)
+			.pipe(rename('intl-tel-input-utility.js'))
 			.pipe(gulp.dest(intlTelInputUtilDestination));
 });
 

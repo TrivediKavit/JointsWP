@@ -39,10 +39,51 @@
 */
 @media all and #{breakpoint(large down)}
 {
-	div.hide-bg,
-	section.hide-bg
+	.top-bar-left
 	{
-		background-image: none !important;
+		text-align: center;
+
+		&.float-left
+		{
+			float: none!important;
+		}
+
+		.menu-text
+		{
+			display: block;
+
+			a
+			{
+				display: inline-block;
+			}
+		}
+	}
+
+	.top-bar-right
+	{
+		width: 100%;
+
+		.float-right
+		{
+			float: none!important;
+			display: block;
+			text-align: center;
+		}
+
+		.show-inline
+		{
+			display: block;
+			+ .show-inline
+			{
+				margin-left: 0;
+			}
+		}
+
+		.primary-menu
+		{
+			margin-top: rem-calc(0);
+			margin-bottom: rem-calc(18);
+		}
 	}
 }
 
@@ -87,6 +128,12 @@
 */
 @media all and #{breakpoint(medium down)}
 {
+	div.hide-bg,
+	section.hide-bg
+	{
+		background-image: none !important;
+	}
+
 	div.hide-bg.columns
 	{
 		.vc_column-inner
@@ -99,47 +146,16 @@
 	{
 		display: none;
 	}
+}
 
-	.top-bar-left
+/**
+* Style for when viewport goes below {small} breakpoint
+*/
+@media all and #{breakpoint(small down)}
+{
+	html,
+	body
 	{
-		text-align: center;
-
-		&.float-left
-		{
-			float: none!important;
-		}
-
-		.menu-text
-		{
-			display: block;
-
-			a
-			{
-				display: inline-block;
-			}
-		}
-	}
-
-	.top-bar-right
-	{
-		width: 100%;
-
-		.float-right
-		{
-			float: none!important;
-			display: block;
-			text-align: center;
-
-			>.show-inline
-			{
-				display: block;
-			}
-		}
-
-		.primary-menu
-		{
-			margin-top: rem-calc(0);
-			margin-bottom: rem-calc(18);
-		}
+		font-size: 92%!important;
 	}
 }

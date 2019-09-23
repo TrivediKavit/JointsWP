@@ -113,7 +113,7 @@ $breakpoints: (
   xxlarge: 1440px,
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xlarge);
 
 // 3. The Grid
 // -----------
@@ -496,12 +496,14 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-sizes: (
-  small: 250px,
+  small: 100%,
+  medium: 350px,
 );
 $offcanvas-vertical-sizes: (
-  small: 250px,
+  small: 100%,
+  medium: 350px,
 );
-$offcanvas-background: $light-gray;
+$offcanvas-background: get-color('secondary');
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.25);
@@ -852,7 +854,7 @@ $topbar-background: transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 250px;
-$topbar-unstack-breakpoint: large;
+$topbar-unstack-breakpoint: xlarge;
 
 // 56. Xy Grid
 // -----------

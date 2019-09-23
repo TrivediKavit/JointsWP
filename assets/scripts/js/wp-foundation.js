@@ -6,6 +6,7 @@ and Foundation play nice together.
 var THEME_FOLDER = "../wp-content/themes/codesmwp";
 var PHONE_FIELD = ".codesm-phone-field";
 var DATEPICKER_FIELD = ".codesm-datepicker-field";
+var EQUALIZE_CONTENT = ".equalize-content";
 
 jQuery(document).ready(function() {
 	
@@ -19,6 +20,31 @@ jQuery(document).ready(function() {
 		} else {
 			jQuery(this).wrap("<div class='responsive-embed'/>");
 		}
+	});
+
+	// Off-Canvas Menu
+	jQuery('#off-canvas').on('opened.zf.offcanvas', function(){
+		jQuery('#off-canvas-close').removeClass('slide-right');
+		jQuery('#off-canvas-close').addClass('slide-left');
+		jQuery('#mobileMenuToggle').removeClass('fadeIn-right');
+		jQuery('#mobileMenuToggle').addClass('fadeOut-left');
+	});
+
+	jQuery('#off-canvas-close').click(function(){
+		jQuery('#off-canvas-close').removeClass('slide-left');
+		jQuery('#off-canvas-close').addClass('slide-right');
+		jQuery('#mobileMenuToggle').removeClass('fadeOut-left');
+		jQuery('#mobileMenuToggle').addClass('fadeIn-right');
+		setTimeout(function(){
+			jQuery('#off-canvas').foundation('close');
+		}, 180);
+	});
+
+	jQuery('#off-canvas').on('closed.zf.offcanvas', function(){
+		jQuery('#off-canvas-close').removeClass('slide-left');
+		jQuery('#off-canvas-close').addClass('slide-right');
+		jQuery('#mobileMenuToggle').removeClass('fadeOut-left');
+		jQuery('#mobileMenuToggle').addClass('fadeIn-right');
 	});
 
 	// Initialize Theme Functions
@@ -111,6 +137,18 @@ function formatDate(date)
     return [year, month, day].join('-');
 }
 
+function equalizeContent()
+{
+	if(jQuery(EQUALIZE_CONTENT).length)
+	{
+		jQuery(EQUALIZE_CONTENT).each(function(){
+			jQuery(this).attr('data-equalizer', '');
+			jQuery(this).attr('data-equalize-on', 'large');
+			new Foundation.Equalizer(jQuery(this)).applyHeight();
+		});
+	}
+}
+
 function initThemeFunctions()
 {
 	// HANDLE DATA-HREF
@@ -128,8 +166,16 @@ function initThemeFunctions()
 	});
 	jQuery(DATEPICKER_FIELD).fdatepicker();
 
+	// TRIGGER EQUALIZER
+	equalizeContent();
+
 	// ENABLE PSEUDO ELEMENTS FOR FONT AWESOME
 	window.FontAwesomeConfig = {
 		searchPseudoElements: true
 	};
+
+	// DISABLE FIRST OPTION
+	jQuery('select.disable-first-option').each(function(){
+		jQuery(this).find('option').first().attr('disabled', 'disabled');
+	});
 }
